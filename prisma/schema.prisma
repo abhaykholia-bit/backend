@@ -1,0 +1,287 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id         String    @id @default(uuid())
+  email      String    @unique
+  fullName   String
+  membership String    @default("basic")
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  sessions   Session[]
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  tokenHash String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model OtpChallenge {
+  id         String    @id @default(uuid())
+  email      String
+  mode       String
+  codeHash   String
+  attempts   Int       @default(0)
+  expiresAt  DateTime
+  verifiedAt DateTime?
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([email, mode, createdAt])
+}
+
+model LandingWellnessLounge {
+  id          String                      @id
+  title       String
+  subtitle    String?
+  actionLabel String?
+  createdAt   DateTime                    @default(now())
+  updatedAt   DateTime                    @updatedAt
+  items       LandingWellnessLoungeItem[]
+}
+
+model LandingWellnessLoungeItem {
+  id          String                @id
+  name        String
+  description String?
+  image       String?
+  color       String
+  imageUrl    String?
+  videoUrl    String?
+  sectionId   String
+  section     LandingWellnessLounge @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder   Int                   @default(0)
+  createdAt   DateTime              @default(now())
+  updatedAt   DateTime              @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingHolisticSolutions {
+  id          String                         @id
+  title       String
+  subtitle    String?
+  actionLabel String?
+  createdAt   DateTime                       @default(now())
+  updatedAt   DateTime                       @updatedAt
+  items       LandingHolisticSolutionsItem[]
+}
+
+model LandingHolisticSolutionsItem {
+  id          String                   @id
+  name        String
+  description String?
+  image       String?
+  color       String
+  imageUrl    String?
+  sectionId   String
+  section     LandingHolisticSolutions @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder   Int                      @default(0)
+  createdAt   DateTime                 @default(now())
+  updatedAt   DateTime                 @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingKnowledgeHub {
+  id          String                    @id
+  title       String
+  subtitle    String?
+  actionLabel String?
+  createdAt   DateTime                  @default(now())
+  updatedAt   DateTime                  @updatedAt
+  items       LandingKnowledgeHubItem[]
+}
+
+model LandingKnowledgeHubItem {
+  id           String              @id
+  name         String
+  description  String?
+  price        String?
+  color        String
+  icon         String?
+  iconImage    String?
+  iconUrl      String?
+  priceAmount  Int?
+  currency     String?
+  durationDays Int?
+  sectionId    String
+  section      LandingKnowledgeHub @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder    Int                 @default(0)
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingFaithkart {
+  id          String                 @id
+  title       String
+  subtitle    String?
+  actionLabel String?
+  createdAt   DateTime               @default(now())
+  updatedAt   DateTime               @updatedAt
+  items       LandingFaithkartItem[]
+}
+
+model LandingFaithkartItem {
+  id         String           @id
+  name       String
+  color      String
+  icon       String?
+  iconImage  String?
+  iconWidth  Int?
+  iconHeight Int?
+  iconUrl    String?
+  sectionId  String
+  section    LandingFaithkart @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder  Int              @default(0)
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingWellnessInsights {
+  id          String                        @id
+  title       String
+  subtitle    String?
+  actionLabel String?
+  createdAt   DateTime                      @default(now())
+  updatedAt   DateTime                      @updatedAt
+  items       LandingWellnessInsightsItem[]
+}
+
+model LandingWellnessInsightsItem {
+  id          String                  @id
+  name        String
+  description String?
+  image       String?
+  color       String
+  action      String?
+  imageUrl    String?
+  sectionId   String
+  section     LandingWellnessInsights @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder   Int                     @default(0)
+  createdAt   DateTime                @default(now())
+  updatedAt   DateTime                @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingUpcomingRituals {
+  id        String                       @id
+  title     String
+  createdAt DateTime                     @default(now())
+  updatedAt DateTime                     @updatedAt
+  items     LandingUpcomingRitualsItem[]
+}
+
+model LandingUpcomingRitualsItem {
+  id            String                 @id
+  name          String
+  badge         String
+  benefitsTitle String
+  date          String
+  color         String
+  imageUrl      String?
+  imageAlt      String?
+  benefits      Json
+  sectionId     String
+  section       LandingUpcomingRituals @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder     Int                    @default(0)
+  createdAt     DateTime               @default(now())
+  updatedAt     DateTime               @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingMeetYourMaster {
+  id          String   @id
+  title       String
+  name        String
+  values      String[]
+  imageUrl    String?
+  imageAlt    String?
+  actionLabel String?
+  actionUrl   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model LandingCorporateWellness {
+  id          String   @id
+  title       String
+  headline    String
+  description String?
+  imageUrl    String?
+  imageAlt    String?
+  actionLabel String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model LandingSuccessStories {
+  id        String                      @id
+  title     String
+  subtitle  String?
+  createdAt DateTime                    @default(now())
+  updatedAt DateTime                    @updatedAt
+  items     LandingSuccessStoriesItem[]
+}
+
+model LandingSuccessStoriesItem {
+  id        String                @id
+  name      String
+  location  String
+  photo     String
+  color     String
+  icon      String?
+  category  String
+  quote     String
+  imageUrl  String?
+  iconUrl   String?
+  sectionId String
+  section   LandingSuccessStories @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder Int                   @default(0)
+  createdAt DateTime              @default(now())
+  updatedAt DateTime              @updatedAt
+
+  @@index([sectionId, sortOrder])
+}
+
+model LandingVideoTestimonials {
+  id        String                         @id
+  title     String
+  subtitle  String?
+  createdAt DateTime                       @default(now())
+  updatedAt DateTime                       @updatedAt
+  items     LandingVideoTestimonialsItem[]
+}
+
+model LandingVideoTestimonialsItem {
+  id        String                   @id
+  name      String
+  role      String
+  color     String
+  imageUrl  String?
+  videoUrl  String?
+  sectionId String
+  section   LandingVideoTestimonials @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  sortOrder Int                      @default(0)
+  createdAt DateTime                 @default(now())
+  updatedAt DateTime                 @updatedAt
+
+  @@index([sectionId, sortOrder])
+}

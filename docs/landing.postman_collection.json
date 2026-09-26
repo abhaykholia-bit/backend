@@ -1,0 +1,415 @@
+{
+  "info": {
+    "name": "LifeWheel Landing APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000/api/v1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Wellness Lounge",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/wellness-lounge",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('wellness-lounge'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"wellness-lounge\",\n    \"title\": \"Wellness Lounge\",\n    \"subtitle\": \"Ancient wisdom. Modern insights. A clearer tomorrow.\",\n    \"actionLabel\": \"Explore all\",\n    \"items\": [\n      {\n        \"id\": \"wellness-lounge-1\",\n        \"name\": \"Sleep & Meditation\",\n        \"description\": \"Relax your body and build a peaceful sleep routine.\",\n        \"image\": \"lavender\",\n        \"color\": \"purple\",\n        \"imageUrl\": \"/images/landing/lavender.jpg\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"wellness-lounge-2\",\n        \"name\": \"Stress Relief\",\n        \"description\": \"Calm your mind, reduce your stress and reconnect.\",\n        \"image\": \"stress\",\n        \"color\": \"peach\",\n        \"imageUrl\": \"/images/landing/stress.jpg\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"wellness-lounge-3\",\n        \"name\": \"Mindfulness\",\n        \"description\": \"Be more present, focused and emotionally balanced.\",\n        \"image\": \"mindfulness\",\n        \"color\": \"green\",\n        \"imageUrl\": \"/images/landing/mindfulness.jpg\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"wellness-lounge-4\",\n        \"name\": \"Sleep & Meditation\",\n        \"description\": \"Relax your body and build a peaceful sleep routine.\",\n        \"image\": \"sunset\",\n        \"color\": \"yellow\",\n        \"imageUrl\": \"/images/landing/sunset.jpg\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"wellness-lounge-5\",\n        \"name\": \"Healing\",\n        \"description\": \"Relax your body and build a peaceful sleep routine.\",\n        \"image\": \"water\",\n        \"color\": \"purple\",\n        \"imageUrl\": \"/images/landing/water.jpg\",\n        \"videoUrl\": null\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Holistic Solutions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/holistic-solutions",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('holistic-solutions'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"holistic-solutions\",\n    \"title\": \"Holistic Solutions\",\n    \"subtitle\": \"Thoughtfully crafted to support your mind, body and energy.\",\n    \"actionLabel\": \"Explore all\",\n    \"items\": [\n      {\n        \"id\": \"holistic-solutions-1\",\n        \"name\": \"Healing\",\n        \"description\": \"Natural therapies to heal your body, mind and soul.\",\n        \"image\": \"healing\",\n        \"color\": \"purple\",\n        \"imageUrl\": \"/images/landing/healing.jpg\"\n      },\n      {\n        \"id\": \"holistic-solutions-2\",\n        \"name\": \"Medical Healing\",\n        \"description\": \"Support your physical and emotional well-being.\",\n        \"image\": \"medical\",\n        \"color\": \"green\",\n        \"imageUrl\": \"/images/landing/medical.jpg\"\n      },\n      {\n        \"id\": \"holistic-solutions-3\",\n        \"name\": \"Spell\",\n        \"description\": \"Channel positive intentions toward your goals.\",\n        \"image\": \"spell\",\n        \"color\": \"peach\",\n        \"imageUrl\": \"/images/landing/spell.jpg\"\n      },\n      {\n        \"id\": \"holistic-solutions-4\",\n        \"name\": \"Aura\",\n        \"description\": \"Cleanse and restore your personal energy.\",\n        \"image\": \"aura\",\n        \"color\": \"yellow\",\n        \"imageUrl\": \"/images/landing/aura.jpg\"\n      },\n      {\n        \"id\": \"holistic-solutions-5\",\n        \"name\": \"Therapy\",\n        \"description\": \"Explore your thoughts and emotions with guidance.\",\n        \"image\": \"therapy\",\n        \"color\": \"purple\",\n        \"imageUrl\": \"/images/landing/therapy.jpg\"\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Knowledge Hub",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/knowledge-hub",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('knowledge-hub'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"knowledge-hub\",\n    \"title\": \"Knowledge Hub\",\n    \"subtitle\": \"Whatever your mood, there’s something for you.\",\n    \"actionLabel\": \"Explore all\",\n    \"items\": [\n      {\n        \"id\": \"knowledge-hub-1\",\n        \"name\": \"Self Healing\",\n        \"description\": \"14-day guided course\",\n        \"price\": \"₹9,999\",\n        \"color\": \"yellow\",\n        \"icon\": \"leaf\",\n        \"iconImage\": \"icon-leaf\",\n        \"iconUrl\": \"/images/landing/icon-leaf.png\",\n        \"priceAmount\": 9999,\n        \"currency\": \"INR\",\n        \"durationDays\": 14\n      },\n      {\n        \"id\": \"knowledge-hub-2\",\n        \"name\": \"Karma clearance\",\n        \"description\": \"14-day guided course\",\n        \"price\": \"₹9,999\",\n        \"color\": \"peach\",\n        \"icon\": \"spark\",\n        \"iconImage\": \"icon-karma\",\n        \"iconUrl\": \"/images/landing/icon-karma.png\",\n        \"priceAmount\": 9999,\n        \"currency\": \"INR\",\n        \"durationDays\": 14\n      },\n      {\n        \"id\": \"knowledge-hub-3\",\n        \"name\": \"Mindfulness\",\n        \"description\": \"14-day guided course\",\n        \"price\": \"₹9,999\",\n        \"color\": \"green\",\n        \"icon\": \"star\",\n        \"iconImage\": \"icon-mindfulness\",\n        \"iconUrl\": \"/images/landing/icon-mindfulness.png\",\n        \"priceAmount\": 9999,\n        \"currency\": \"INR\",\n        \"durationDays\": 14\n      },\n      {\n        \"id\": \"knowledge-hub-4\",\n        \"name\": \"Self Healing\",\n        \"description\": \"21-day guided course\",\n        \"price\": \"₹7,999\",\n        \"color\": \"purple\",\n        \"icon\": \"spark\",\n        \"iconImage\": \"icon-healing\",\n        \"iconUrl\": \"/images/landing/icon-healing.png\",\n        \"priceAmount\": 7999,\n        \"currency\": \"INR\",\n        \"durationDays\": 21\n      },\n      {\n        \"id\": \"knowledge-hub-5\",\n        \"name\": \"Self Healing\",\n        \"description\": \"14-day guided course\",\n        \"price\": \"₹9,999\",\n        \"color\": \"yellow\",\n        \"icon\": \"leaf\",\n        \"iconImage\": \"icon-leaf\",\n        \"iconUrl\": \"/images/landing/icon-leaf.png\",\n        \"priceAmount\": 9999,\n        \"currency\": \"INR\",\n        \"durationDays\": 14\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Faithkart",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/faithkart",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('faithkart'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"faithkart\",\n    \"title\": \"Faithkart\",\n    \"subtitle\": \"Spiritual essentials for your journey within.\",\n    \"actionLabel\": \"Explore all\",\n    \"items\": [\n      {\n        \"id\": \"faithkart-1\",\n        \"name\": \"Crystals\",\n        \"color\": \"purple\",\n        \"icon\": \"diamond\",\n        \"iconImage\": \"faithkart-crystal\",\n        \"iconWidth\": 77,\n        \"iconHeight\": 73,\n        \"iconUrl\": \"/images/landing/faithkart-crystal.png\"\n      },\n      {\n        \"id\": \"faithkart-2\",\n        \"name\": \"Gems\",\n        \"color\": \"peach\",\n        \"icon\": \"gems\",\n        \"iconImage\": \"faithkart-gems\",\n        \"iconWidth\": 93,\n        \"iconHeight\": 94,\n        \"iconUrl\": \"/images/landing/faithkart-gems.png\"\n      },\n      {\n        \"id\": \"faithkart-3\",\n        \"name\": \"Bracelet\",\n        \"color\": \"yellow\",\n        \"icon\": \"bracelet\",\n        \"iconImage\": \"faithkart-prayer-beads\",\n        \"iconWidth\": 100,\n        \"iconHeight\": 100,\n        \"iconUrl\": \"/images/landing/faithkart-prayer-beads.png\"\n      },\n      {\n        \"id\": \"faithkart-4\",\n        \"name\": \"Ring\",\n        \"color\": \"green\",\n        \"icon\": \"ring\",\n        \"iconImage\": \"faithkart-ring\",\n        \"iconWidth\": 77,\n        \"iconHeight\": 91,\n        \"iconUrl\": \"/images/landing/faithkart-ring.png\"\n      },\n      {\n        \"id\": \"faithkart-5\",\n        \"name\": \"Crystals\",\n        \"color\": \"purple\",\n        \"iconImage\": \"icon-orbit\",\n        \"iconWidth\": 81,\n        \"iconUrl\": \"/images/landing/icon-orbit.png\"\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Wellness Insights",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/wellness-insights",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('wellness-insights'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"wellness-insights\",\n    \"title\": \"Wellness Insights\",\n    \"subtitle\": \"Simple ideas for a healthier, more balanced life.\",\n    \"actionLabel\": \"Explore all\",\n    \"items\": [\n      {\n        \"id\": \"wellness-insights-1\",\n        \"name\": \"Work Life Balance\",\n        \"description\": \"7 Ways to Create Better Work-Life Balance\",\n        \"image\": \"insight-balance\",\n        \"color\": \"peach\",\n        \"action\": \"Read all\",\n        \"imageUrl\": \"/images/landing/insight-balance.jpg\"\n      },\n      {\n        \"id\": \"wellness-insights-2\",\n        \"name\": \"Relationships\",\n        \"description\": \"Simple Habits That Build Stronger Relationships\",\n        \"image\": \"insight-relationships\",\n        \"color\": \"green\",\n        \"action\": \"Read all\",\n        \"imageUrl\": \"/images/landing/insight-relationships.jpg\"\n      },\n      {\n        \"id\": \"wellness-insights-3\",\n        \"name\": \"Personal Growth\",\n        \"description\": \"Relax your body and build a peaceful sleep routine.\",\n        \"image\": \"insight-growth\",\n        \"color\": \"yellow\",\n        \"action\": \"Read all\",\n        \"imageUrl\": \"/images/landing/insight-growth.jpg\"\n      },\n      {\n        \"id\": \"wellness-insights-4\",\n        \"name\": \"Work Life Balance\",\n        \"description\": \"Relax your body and build a peaceful sleep routine.\",\n        \"image\": \"insight-lavender\",\n        \"color\": \"purple\",\n        \"action\": \"Read all\",\n        \"imageUrl\": \"/images/landing/insight-lavender.jpg\"\n      },\n      {\n        \"id\": \"wellness-insights-5\",\n        \"name\": \"Healing\",\n        \"description\": \"Relax your body and build a peaceful sleep routine.\",\n        \"image\": \"insight-healing\",\n        \"color\": \"green\",\n        \"action\": \"Read all\",\n        \"imageUrl\": \"/images/landing/insight-healing.jpg\"\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Upcoming Ritual",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/upcoming-rituals",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('upcoming-rituals'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"upcoming-rituals\",\n    \"title\": \"Upcoming Ritual\",\n    \"items\": [\n      {\n        \"id\": \"full-moon-reset\",\n        \"name\": \"Full Moon Reset\",\n        \"badge\": \"Ritual casting on\",\n        \"benefitsTitle\": \"This Ritual Helps You\",\n        \"date\": \"2026-09-27\",\n        \"color\": \"#FFF7BF\",\n        \"imageUrl\": \"/images/landing/moon.jpg\",\n        \"imageAlt\": \"Golden full moon above the trees\",\n        \"benefits\": [\n          {\n            \"text\": \"Release Negativity & Past Burdens\",\n            \"iconUrl\": \"/images/landing/ritual-benefit-0.png\"\n          },\n          {\n            \"text\": \"Invite Prosperity & Abundance\",\n            \"iconUrl\": \"/images/landing/ritual-benefit-1.png\"\n          },\n          {\n            \"text\": \"Strengthen Spiritual Connection\",\n            \"iconUrl\": \"/images/landing/ritual-benefit-2.png\"\n          },\n          {\n            \"text\": \"Align with Higher Wisdom\",\n            \"iconUrl\": \"/images/landing/ritual-benefit-3.png\"\n          },\n          {\n            \"text\": \"Receive Divine Blessings & Grace\",\n            \"iconUrl\": \"/images/landing/ritual-benefit-4.png\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "MEET YOUR MASTER",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/meet-your-master",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('meet-your-master'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"meet-your-master\",\n    \"title\": \"MEET YOUR MASTER\",\n    \"name\": \"Dr. Nilima Roy Chowdhury\",\n    \"values\": [\n      \"Science\",\n      \"Spirituality\",\n      \"Transformation\"\n    ],\n    \"imageUrl\": \"/images/landing/master-yoga.png\",\n    \"imageAlt\": \"Yoga and mindful movement\",\n    \"actionLabel\": \"Know More\",\n    \"actionUrl\": \"/meet-the-master\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "CORPORATE WELLNESS",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/corporate-wellness",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('corporate-wellness'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"corporate-wellness\",\n    \"title\": \"CORPORATE WELLNESS\",\n    \"headline\": \"Healthy People.Stronger Business.\",\n    \"description\": \"Support your team’s well-being, reduce stress and boost productivity.\",\n    \"imageUrl\": \"/images/landing/corporate-wellness-mobile.png\",\n    \"imageAlt\": \"Bright modern corporate wellness office\",\n    \"actionLabel\": \"Explore Corporate Wellness\"\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Our Success Stories",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/success-stories",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('success-stories'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"success-stories\",\n    \"title\": \"Our Success Stories\",\n    \"subtitle\": \"Real journeys of healing, growth and meaningful transformation.\",\n    \"items\": [\n      {\n        \"id\": \"story-1\",\n        \"name\": \"Priya Iyer\",\n        \"location\": \"Delhi, India\",\n        \"photo\": \"story-priya.jpg\",\n        \"color\": \"purple\",\n        \"icon\": \"story-purple.png\",\n        \"category\": \"Mindfulness\",\n        \"quote\": \"I started my healing journey with Nirvana Nilima during a difficult phase, and it has been a blessing. The guidance, support and care are exceptional.\",\n        \"imageUrl\": \"/images/landing/story-priya.jpg\",\n        \"iconUrl\": \"/images/landing/story-purple.png\"\n      },\n      {\n        \"id\": \"story-2\",\n        \"name\": \"Arjun Mehta\",\n        \"location\": \"Bengaluru, India\",\n        \"photo\": \"story-arjun.jpg\",\n        \"color\": \"green\",\n        \"icon\": \"story-green.png\",\n        \"category\": \"Holistic Healing\",\n        \"quote\": \"The holistic approach here is truly unique. It has helped me improve my energy, focus, and overall well-being. Grateful for this beautiful journey\",\n        \"imageUrl\": \"/images/landing/story-arjun.jpg\",\n        \"iconUrl\": \"/images/landing/story-green.png\"\n      },\n      {\n        \"id\": \"story-3\",\n        \"name\": \"Neha Sharma\",\n        \"location\": \"Pune, India\",\n        \"photo\": \"story-neha.jpg\",\n        \"color\": \"yellow\",\n        \"icon\": \"story-yellow.png\",\n        \"category\": \"Wellness Program\",\n        \"quote\": \"Absolutely life-changing! The sessions helped me release stress, improve my sleep, and bring so much clarity to my life. I feel more balanced and in tune with myself. Thank you!\",\n        \"imageUrl\": \"/images/landing/story-neha.jpg\",\n        \"iconUrl\": \"/images/landing/story-yellow.png\"\n      },\n      {\n        \"id\": \"story-4\",\n        \"name\": \"Neha Sharma\",\n        \"location\": \"Pune, India\",\n        \"photo\": \"story-neha.jpg\",\n        \"color\": \"purple\",\n        \"icon\": \"story-yellow.png\",\n        \"category\": \"Wellness Program\",\n        \"quote\": \"Absolutely life-changing! The sessions helped me release stress, improve my sleep, and bring so much clarity to my life. I feel more balanced and in tune with myself. Thank you!\",\n        \"imageUrl\": \"/images/landing/story-neha.jpg\",\n        \"iconUrl\": \"/images/landing/story-yellow.png\"\n      }\n    ]\n  }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Video Testimonials",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/landing/video-testimonials",
+        "description": "Public endpoint. No authorization, query parameters, or request body required."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', () => pm.response.to.have.status(200));",
+              "pm.test('Correct section', () => pm.expect(pm.response.json().data.id).to.eql('video-testimonials'));"
+            ]
+          }
+        }
+      ],
+      "response": [
+        {
+          "name": "200 OK",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {\n    \"id\": \"video-testimonials\",\n    \"title\": \"Video Testimonials\",\n    \"subtitle\": \"Real stories from real people who transformed their lives with guidance, consistency and small steps.\",\n    \"items\": [\n      {\n        \"id\": \"ananya\",\n        \"name\": \"Ananya Iyer\",\n        \"role\": \"Software Engineer\",\n        \"color\": \"purple\",\n        \"imageUrl\": \"/images/landing/video-ananya.png\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"rohan\",\n        \"name\": \"Rohan Malhotra\",\n        \"role\": \"Entrepreneur\",\n        \"color\": \"green\",\n        \"imageUrl\": \"/images/landing/video-rohan.png\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"priya\",\n        \"name\": \"Priya Mehta\",\n        \"role\": \"UX Designer\",\n        \"color\": \"yellow\",\n        \"imageUrl\": \"/images/landing/video-priya.png\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"james\",\n        \"name\": \"James Wilson\",\n        \"role\": \"HR Manager\",\n        \"color\": \"purple\",\n        \"imageUrl\": \"/images/landing/video-james.png\",\n        \"videoUrl\": null\n      },\n      {\n        \"id\": \"sofia\",\n        \"name\": \"Sofia Rodriguez\",\n        \"role\": \"Software Engineer\",\n        \"color\": \"yellow\",\n        \"imageUrl\": \"/images/landing/video-sofia.png\",\n        \"videoUrl\": null\n      }\n    ]\n  }\n}"
+        }
+      ]
+    }
+  ]
+}

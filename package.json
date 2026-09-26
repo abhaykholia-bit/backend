@@ -1,0 +1,46 @@
+{
+  "name": "life-wheel-backend",
+  "version": "0.0.1",
+  "description": "LifeWheel Node.js / Express API (plain JavaScript)",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "prisma generate && npm run check",
+    "check": "node scripts/check.js",
+    "start": "node src/server.js",
+    "start:dev": "node --watch src/server.js",
+    "start:debug": "node --inspect --watch src/server.js",
+    "start:prod": "NODE_ENV=production node src/server.js",
+    "test": "node --test test/*.cjs",
+    "lint": "eslint src scripts test prisma.config.js",
+    "format": "prettier --write \"src/**/*.js\" \"scripts/**/*.js\" \"test/**/*.cjs\" prisma.config.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "cms:dev": "npm run develop --prefix cms",
+    "cms:build": "npm run build --prefix cms",
+    "cms:start": "npm run start --prefix cms",
+    "prisma:deploy": "prisma migrate deploy",
+    "seed:landing": "node scripts/seed-landing.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "@prisma/adapter-pg": "^7.9.0",
+    "@prisma/client": "^7.9.0",
+    "pg": "^8.23.0",
+    "prisma": "^7.9.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint": "^9.18.0",
+    "globals": "^17.0.0",
+    "prettier": "^3.4.2"
+  },
+  "type": "commonjs",
+  "main": "src/app.js",
+  "engines": {
+    "node": ">=22.12.0 <25"
+  }
+}
