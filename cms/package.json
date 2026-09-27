@@ -1,11 +1,12 @@
 {
-  "name": "cms",
+  "name": "lifewheel",
   "version": "0.1.0",
   "private": true,
-  "description": "Life Wheel Strapi CMS",
+  "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",
+    "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
@@ -14,8 +15,10 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-users-permissions": "5.51.0",
-    "@strapi/strapi": "5.51.0",
+    "@strapi/database": "5.55.1",
+    "@strapi/plugin-cloud": "5.55.1",
+    "@strapi/plugin-users-permissions": "5.55.1",
+    "@strapi/strapi": "5.55.1",
     "pg": "8.20.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -33,7 +36,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "b0dfdfa1-508f-49ec-906d-299668b3dca9",
-    "installId": "2fa5ecdbe59b00b7baf8237ecc19e8ee9979406bf97e718b00875ab8faa90a3f"
+    "uuid": "817003db-43b6-4511-a5e3-4fd4d469e14b",
+    "installId": "e34fc4b81a714a97e1c0f9df1b65396e7a0989bde8b342e37c5ec88b4a13d96a"
   }
 }

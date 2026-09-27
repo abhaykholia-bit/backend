@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "holistic_solutions",
+  "info": {
+    "singularName": "holistic-solution",
+    "pluralName": "holistic-solutions",
+    "displayName": "Holistic Solutions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "component": "landing.items",
+      "repeatable": true
+    }
+  }
+}

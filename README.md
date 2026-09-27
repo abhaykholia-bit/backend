@@ -21,6 +21,10 @@ variables override files; the environment-specific file takes precedence over
 
 Base URL: `http://localhost:4000/api/v1`
 
+Check the running API at `http://localhost:4000/api/v1/health`.
+If startup reports that port 4000 is already in use, stop the existing server
+or run `PORT=4001 npm start` and use `http://localhost:4001/api/v1`.
+
 - `npm start`: start the API with Node.js.
 - `npm run start:dev`: restart on changes with Node's built-in watch mode.
 - `npm run build`: generate the Prisma JavaScript client and check JS syntax.

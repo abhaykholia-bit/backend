@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_ritual_benefits",
+  "info": {
+    "displayName": "Ritual Benefit"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

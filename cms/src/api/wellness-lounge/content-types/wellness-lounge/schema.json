@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "wellness_lounges",
+  "info": {
+    "singularName": "wellness-lounge",
+    "pluralName": "wellness-lounges",
+    "displayName": "Wellness Lounge"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "actionLabel": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "landing.wellness-card",
+      "repeatable": true
+    }
+  }
+}

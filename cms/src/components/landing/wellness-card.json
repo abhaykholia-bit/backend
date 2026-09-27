@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_landing_wellness_cards",
+  "info": {
+    "displayName": "Wellness Card"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "purple, peach, green, yellow"
+      ]
+    },
+    "videoUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

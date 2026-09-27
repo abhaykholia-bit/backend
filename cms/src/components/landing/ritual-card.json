@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_landing_ritual_cards",
+  "info": {
+    "displayName": "Ritual Card"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "benefitsTitle": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "color": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "component",
+      "component": "landing.ritual-benefit",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

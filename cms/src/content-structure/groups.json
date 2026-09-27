@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "sections": {
+    "collectionTypes": {
+      "groups": []
+    },
+    "singleTypes": {
+      "groups": [
+        {
+          "parent": null,
+          "name": "landing",
+          "id": "grp_22e85ab9591d4d9b8fb81c72",
+          "children": [
+            {
+              "uid": "api::upcoming-ritual.upcoming-ritual",
+              "type": "contentType"
+            },
+            {
+              "uid": "api::holistic-solution.holistic-solution",
+              "type": "contentType"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
